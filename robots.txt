@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://southseaadventure.tesujimath.org/sitemap.xml

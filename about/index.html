@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+      />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/glightbox.min.css" />
+    <link rel="stylesheet" href="/site.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <title>South Sea Adventure</title>
+  </head>
+
+  <body>
+    <header class="main-header homepage">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="header-inner">
+              
+              <a href="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;" class="logo" style="font-family: 'Lobster', cursive">South Sea Adventure</a>
+              
+              <ul class="d-none d-md-block">
+                <li><a href="/about">ABOUT</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+<article>
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="header">
+            <h1>About</h1>
+          </div>
+          <p>This is Simon's photo blog from his 2021 holiday to Rarotonga, at a time when The Cook Islands were closed to all except New Zealand.</p>
+<p>First holiday day is Saturday 3rd July, which is Sunday in New Zealand.</p>
+<p>Check back often.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+
+    <footer class="text-center">
+      <div class="wrap copyright">
+        powered by
+        <a href="https://www.getzola.org/" target="_blank">zola</a>
+        | design by
+        <a href="https://www.biati.digital" target="_blank">biati digital</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+    <script src="/js/valde.min.js"></script>
+    <script src="/js/glightbox.min.js"></script>
+    <script src="/js/site.js"></script>
+    <script>
+      var lightbox = GLightbox();
+      lightbox.on('open', (target) => {
+        console.log('lightbox opened');
+      });
+      var lightboxDescription = GLightbox({
+        selector: '.glightbox2'
+      });
+      var lightboxVideo = GLightbox({
+        selector: '.glightbox3'
+      });
+      lightboxVideo.on('slide_changed', ({ prev, current }) => {
+        console.log('Prev slide', prev);
+        console.log('Current slide', current);
+
+        const { slideIndex, slideNode, slideConfig, player } = current;
+
+        if (player) {
+          if (!player.ready) {
+            // If player is not ready
+            player.on('ready', (event) => {
+              // Do something when video is ready
+            });
+          }
+
+          player.on('play', (event) => {
+            console.log('Started play');
+          });
+
+          player.on('volumechange', (event) => {
+            console.log('Volume change');
+          });
+
+          player.on('ended', (event) => {
+            console.log('Video ended');
+          });
+        }
+      });
+
+      var lightboxInlineIframe = GLightbox({
+        selector: '.glightbox4'
+      });
+
+      /* var exampleApi = GLightbox({ selector: null });
+         exampleApi.insertSlide({
+         href: 'https://picsum.photos/1200/800',
+         });
+         exampleApi.insertSlide({
+         width: '500px',
+         content: '<p>Example</p>'
+         });
+         exampleApi.insertSlide({
+         href: 'https://www.youtube.com/watch?v=WzqrwPhXmew',
+         });
+         exampleApi.insertSlide({
+         width: '200vw',
+         content: document.getElementById('inline-example')
+         });
+         exampleApi.open(); */
+    </script>
+  </body>
+</html>
