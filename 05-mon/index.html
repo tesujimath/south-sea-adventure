@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+      />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/glightbox.min.css" />
+    <link rel="stylesheet" href="/site.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <title>South Sea Adventure</title>
+  </head>
+
+  <body>
+    <header class="main-header ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="header-inner">
+              
+              <a href="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;" class="logo" style="font-family: 'Lobster', cursive">South Sea Adventure</a>
+              
+              <ul class="d-none d-md-block">
+                <li><a href="/about">ABOUT</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+<article>
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="header">
+            <h1>Day 3 - Rain</h1>
+            
+            <span class='divider'/>
+            <span>04 July 2021</span>
+            
+          </div>
+          <p>It rained a lot.  I read quite a bit of my book.  The rain never really stopped, but when it eased up a little I nipped out on the scooter to buy an umbrella.  Curiously there was only one shop on the island able to sell me one, in Avarua right round the other side.  There's an obvious lost business opportunity here.</p>
+<h3>
+  <i class="fa fa-camera-retro heading-icon" aria-hidden="true"></i>
+  Heavy Cloud and Much Rain
+</h3>
+
+
+<ul class="box-container three-cols">
+<li class="box">
+  <div class="inner">
+    <a href="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;a1f4afe747e00e2e00.jpg" class="glightbox"
+       
+       data-glightbox='description:Actually it rained all morning too.;'
+       
+       >
+      <img src="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;0beeba60f35dd9b300.jpg" alt="image" />
+    </a>
+  </div>
+</li>
+<li class="box">
+  <div class="inner">
+    <a href="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;c5a41d085ef6b46a00.jpg" class="glightbox"
+       
+       data-glightbox='description:My trusty little red scooter.  Everyone rides these here.  You get wet when it rains.;'
+       
+       >
+      <img src="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;5c46ed12299035a000.jpg" alt="image" />
+    </a>
+  </div>
+</li>
+<li class="box">
+  <div class="inner">
+    <a href="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;3039bc1dd45861ed00.jpg" class="glightbox"
+       
+       data-glightbox='description:Apparently there are no marketing people in the Cook Islands.  Fancy filling up your car with Super Brown?  No, me neither.;'
+       
+       >
+      <img src="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;11f6b78f91f315b700.jpg" alt="image" />
+    </a>
+  </div>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+
+    <footer class="text-center">
+      <div class="wrap copyright">
+        powered by
+        <a href="https://www.getzola.org/" target="_blank">zola</a>
+        | design by
+        <a href="https://www.biati.digital" target="_blank">biati digital</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+    <script src="/js/valde.min.js"></script>
+    <script src="/js/glightbox.min.js"></script>
+    <script src="/js/site.js"></script>
+    <script>
+      var lightbox = GLightbox();
+      lightbox.on('open', (target) => {
+        console.log('lightbox opened');
+      });
+      var lightboxDescription = GLightbox({
+        selector: '.glightbox2'
+      });
+      var lightboxVideo = GLightbox({
+        selector: '.glightbox3'
+      });
+      lightboxVideo.on('slide_changed', ({ prev, current }) => {
+        console.log('Prev slide', prev);
+        console.log('Current slide', current);
+
+        const { slideIndex, slideNode, slideConfig, player } = current;
+
+        if (player) {
+          if (!player.ready) {
+            // If player is not ready
+            player.on('ready', (event) => {
+              // Do something when video is ready
+            });
+          }
+
+          player.on('play', (event) => {
+            console.log('Started play');
+          });
+
+          player.on('volumechange', (event) => {
+            console.log('Volume change');
+          });
+
+          player.on('ended', (event) => {
+            console.log('Video ended');
+          });
+        }
+      });
+
+      var lightboxInlineIframe = GLightbox({
+        selector: '.glightbox4'
+      });
+
+      /* var exampleApi = GLightbox({ selector: null });
+         exampleApi.insertSlide({
+         href: 'https://picsum.photos/1200/800',
+         });
+         exampleApi.insertSlide({
+         width: '500px',
+         content: '<p>Example</p>'
+         });
+         exampleApi.insertSlide({
+         href: 'https://www.youtube.com/watch?v=WzqrwPhXmew',
+         });
+         exampleApi.insertSlide({
+         width: '200vw',
+         content: document.getElementById('inline-example')
+         });
+         exampleApi.open(); */
+    </script>
+  </body>
+</html>
