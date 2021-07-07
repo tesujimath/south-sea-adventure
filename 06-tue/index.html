@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+      />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/glightbox.min.css" />
+    <link rel="stylesheet" href="/site.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <title>South Sea Adventure</title>
+  </head>
+
+  <body>
+    <header class="main-header ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="header-inner">
+              
+              <a href="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;" class="logo" style="font-family: 'Lobster', cursive">South Sea Adventure</a>
+              
+              <ul class="d-none d-md-block">
+                <li><a href="/about">ABOUT</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+<article>
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="header">
+            <h1>Day 4 - Kayak to Muri Lagoon</h1>
+            
+            <span class='divider'/>
+            <span>05 July 2021</span>
+            
+          </div>
+          <p>In the morning I read my book, and then popped out on the scooter for a coffee and a brownie, and had a walk on Muri Beach.  It wasn't raining.  In the afternoon, I paddled the kayak around to Muri Lagoon, hoping but failing to see some big fish.</p>
+<p>In the evening, I returned to the Muri Night Market for a delicious fried chicken noodle tea, meeting Anthony, Mary and Suzie, an anaesthetist, nurse and a GP from Christchurch.  Had a really lovely evening with them.</p>
+<h3>
+  <i class="fa fa-camera-retro heading-icon" aria-hidden="true"></i>
+  Muri Beach and Lagoon
+</h3>
+
+
+<ul class="box-container three-cols">
+<li class="box">
+  <div class="inner">
+    <a href="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;5e5312be4bad51fb00.jpg" class="glightbox"
+       
+       data-glightbox='description:A walk along Muri Beach.;'
+       
+       >
+      <img src="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;b32501ec69cbc7e300.jpg" alt="image" />
+    </a>
+  </div>
+</li>
+<li class="box">
+  <div class="inner">
+    <a href="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;0c945a400158099b00.png" class="glightbox"
+       
+       data-glightbox='description:A little kayak trip over to Muri Lagoon.;'
+       
+       >
+      <img src="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;4faaa3b39f44ef9800.png" alt="image" />
+    </a>
+  </div>
+</li>
+<li class="box">
+  <div class="inner">
+    <a href="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;ebe3c7e0d3d012d500.jpg" class="glightbox"
+       
+       data-glightbox='description:Getting better at arranging things on the kayak.;'
+       
+       >
+      <img src="https:&#x2F;&#x2F;southseaadventure.tesujimath.org&#x2F;processed_images&#x2F;e93cce45aae9dc5100.jpg" alt="image" />
+    </a>
+  </div>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+
+    <footer class="text-center">
+      <div class="wrap copyright">
+        powered by
+        <a href="https://www.getzola.org/" target="_blank">zola</a>
+        | design by
+        <a href="https://www.biati.digital" target="_blank">biati digital</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+    <script src="/js/valde.min.js"></script>
+    <script src="/js/glightbox.min.js"></script>
+    <script src="/js/site.js"></script>
+    <script>
+      var lightbox = GLightbox();
+      lightbox.on('open', (target) => {
+        console.log('lightbox opened');
+      });
+      var lightboxDescription = GLightbox({
+        selector: '.glightbox2'
+      });
+      var lightboxVideo = GLightbox({
+        selector: '.glightbox3'
+      });
+      lightboxVideo.on('slide_changed', ({ prev, current }) => {
+        console.log('Prev slide', prev);
+        console.log('Current slide', current);
+
+        const { slideIndex, slideNode, slideConfig, player } = current;
+
+        if (player) {
+          if (!player.ready) {
+            // If player is not ready
+            player.on('ready', (event) => {
+              // Do something when video is ready
+            });
+          }
+
+          player.on('play', (event) => {
+            console.log('Started play');
+          });
+
+          player.on('volumechange', (event) => {
+            console.log('Volume change');
+          });
+
+          player.on('ended', (event) => {
+            console.log('Video ended');
+          });
+        }
+      });
+
+      var lightboxInlineIframe = GLightbox({
+        selector: '.glightbox4'
+      });
+
+      /* var exampleApi = GLightbox({ selector: null });
+         exampleApi.insertSlide({
+         href: 'https://picsum.photos/1200/800',
+         });
+         exampleApi.insertSlide({
+         width: '500px',
+         content: '<p>Example</p>'
+         });
+         exampleApi.insertSlide({
+         href: 'https://www.youtube.com/watch?v=WzqrwPhXmew',
+         });
+         exampleApi.insertSlide({
+         width: '200vw',
+         content: document.getElementById('inline-example')
+         });
+         exampleApi.open(); */
+    </script>
+  </body>
+</html>
